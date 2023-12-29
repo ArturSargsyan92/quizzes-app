@@ -1,0 +1,67 @@
+.signup {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-inner-block {
+  width: max-content;
+  border: 1px solid black;
+  text-align: center;
+  padding: 50px 100px;
+}
+
+.signup-inner-block h2 {
+  margin-bottom: 2rem;
+}
+
+.signup-inner-block p {
+  font-size: 1.5rem;
+}
+
+.signup-inner-block form >  div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.signup-inner-block form >  div label {
+  display: inline-block;
+  text-align: left;
+  min-width: 100px;
+}
+
+.signup-inner-block form >  div input {
+  padding: 5px 10px;
+  border: 1px solid #dadada;
+  background-color: #fff;
+}
+
+.signup-inner-block form >  div input:focus,
+.signup-inner-block form >  div input:active {
+  outline: none;
+}
+
+.signup-inner-block p {
+  font-size: 1.5rem;
+}
+
+.signup-inner-block button {
+  margin: 20px 5px 0;
+  padding: 10px 20px;
+  border: 1px solid #dadada;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 1s;
+}
+
+.signup-inner-block button:hover {
+  background-color: #ddd;
+  border: 1px solid #000;
+}

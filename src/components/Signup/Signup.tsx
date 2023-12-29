@@ -1,38 +1,43 @@
-import { ChangeEvent, useState } from "react";
-import { SignUpPayload } from "../domains/users/types/signup.types";
-import UsersService from "../domains/users/users.service";
+import React, { ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import UsersService from "../../domains/users/users.service";
+import "./Signup.css";
+import { SignUpPayload } from "../../domains/users/types/users-requests";
 
-function SignUp() {
-    const navigate = useNavigate();
-    const [payload, setPayload] = useState<SignUpPayload>({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
+function SignUp(): React.ReactElement {
+  const navigate = useNavigate();
+  const [payload, setPayload] = useState<SignUpPayload>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+
+    setPayload({
+      ...payload,
+      [name]: value,
     });
+  };
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
-        const { name, value } = e.target;
-        setPayload({
-          ...payload,
-          [name]: value,
-        });
-      };
+  const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    try {
+      await UsersService.signUp(payload);
 
-        try {
-            const user = await UsersService.signUp(payload);
-            navigate("/")
-        } catch (error) {
-          console.error(error);
-          // TODO handle errors
-        }
-      };
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      // TODO handle errors
+    }
+  };
 
-    return (<div>
+  return (
+    <div className="signup">
+      <div className="signup-inner-block">
         <h2>Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div>
@@ -80,10 +85,12 @@ function SignUp() {
               required
             />
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Register</button>
+          <button type="button" onClick={() => navigate("/")}>Sign In</button>
         </form>
       </div>
-    );
+    </div>
+  );
 }
 
 export default SignUp;
