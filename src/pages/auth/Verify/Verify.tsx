@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import UsersService from "../../domains/users/users.service";
-import MessagePage from "../MessagePage/MessagePage";
+import UsersService from "../../../domains/users/users.service";
+import MessageBlock from "../../../components/MessageBlock/MessageBlock";
 
 function Verify(): React.ReactElement {
   const location = useLocation();
@@ -29,7 +29,7 @@ function Verify(): React.ReactElement {
 
   return (
     <div>
-      {msg ? <MessagePage message={msg} /> : <div>Loading</div>}
+      {msg ? <MessageBlock message={msg} /> : <div>Loading</div>}
     </div>
   );
 }

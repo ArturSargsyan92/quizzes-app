@@ -1,11 +1,14 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import UsersService from "../../domains/users/users.service";
+import { SignUpPayload } from "../../../domains/users/types/users-requests";
+import AuthContext from "../../../context/AuthContext";
 import "./Signup.css";
-import { SignUpPayload } from "../../domains/users/types/users-requests";
 
 function SignUp(): React.ReactElement {
   const navigate = useNavigate();
+
+  const { signUpUser } = useContext(AuthContext)!;
+
   const [payload, setPayload] = useState<SignUpPayload>({
     firstName: "",
     lastName: "",
@@ -22,17 +25,10 @@ function SignUp(): React.ReactElement {
     });
   };
 
-  const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    try {
-      await UsersService.signUp(payload);
-
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-      // TODO handle errors
-    }
+    signUpUser(payload);
   };
 
   return (

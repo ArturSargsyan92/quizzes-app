@@ -1,12 +1,12 @@
 import React from "react";
-import "./MessagePage.css";
+import "./MessageBlock.css";
 import { useNavigate } from "react-router-dom";
 
-type MessagePageProps = {
+type MessageBlockProps = {
   message: string;
 };
 
-function MessagePage({ message }: MessagePageProps): React.ReactElement {
+function MessageBlock({ message }: MessageBlockProps): React.ReactElement {
   const navigate = useNavigate();
 
   const goToLoginPage = () => {
@@ -23,4 +23,4 @@ function MessagePage({ message }: MessagePageProps): React.ReactElement {
   );
 }
 
-export default React.memo(MessagePage);
+export default React.memo(MessageBlock);
