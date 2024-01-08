@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import QuizzesService from "../../domains/quizzes/quizzes.service";
+import QuizzesService from "../domains/quizzes/quizzes.service";
 
 function Quizzes(): React.ReactElement {
   useEffect(() => {

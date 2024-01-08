@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { User } from "../../domains/users/types/users.types";
-import UsersService from "../../domains/users/users.service";
+import { User } from "../domains/users/types/users.types";
+import UsersService from "../domains/users/users.service";
 
 function Profile(): React.ReactElement {
   const [user, setUser] = useState<User | null>(null);

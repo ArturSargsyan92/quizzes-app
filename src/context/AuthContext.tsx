@@ -32,7 +32,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       await UsersService.signUp(payload);
       setSuccessAuth(true);
 
-      navigate("/");
+      navigate("/login");
     } catch (error: any) {
       console.error("ERROR: Error during sign up:", error.message);
     }

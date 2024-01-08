@@ -1,0 +1,12 @@
+header {
+    width: 100%;
+    
+    .header-block {
+        @include displayFlex(row, nowrap, center, space-between, center);
+        border-bottom: 1px solid #dadada;
+
+        .logo {
+            max-width: 120px;
+        }
+    }
+}

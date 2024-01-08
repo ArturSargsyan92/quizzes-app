@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Message Block*/
+/* --- Message Block ---*/
 .message-block {
   height: 100vh;
   display: flex;
@@ -26,4 +26,19 @@
 
 .message-block .inner-block p {
   font-size: 1.5rem;
+}
+
+.message-block .inner-block button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: 1px solid #dadada;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.message-block .inner-block button:hover {
+  background-color: #ddd;
+  border: 1px solid #000;
 }

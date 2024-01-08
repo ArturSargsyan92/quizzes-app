@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import UsersService from "../../../domains/users/users.service";
-import MessageBlock from "../../../components/MessageBlock/MessageBlock";
+import UsersService from "../../domains/users/users.service";
+import MessageBlock from "../../components/MessageBlock";
 
 function Verify(): React.ReactElement {
   const location = useLocation();

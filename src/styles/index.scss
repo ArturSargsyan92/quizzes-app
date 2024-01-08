@@ -1,0 +1,13 @@
+@import './defaults/variables';
+@import './defaults/mixins';
+@import './defaults/typography';
+@import './defaults/default';
+@import './defaults/animations';
+
+@import './pages/Home.scss';
+@import './pages/Login.scss';
+@import './pages/SignUp.scss';
+
+@import './components/header.scss';
+@import './components/footer.scss';
+@import './components/navbar.scss'

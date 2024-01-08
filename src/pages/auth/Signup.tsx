@@ -1,8 +1,7 @@
 import React, { ChangeEvent, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { SignUpPayload } from "../../../domains/users/types/users-requests";
-import AuthContext from "../../../context/AuthContext";
-import "./Signup.css";
+import { SignUpPayload } from "../../domains/users/types/users-requests";
+import AuthContext from "../../context/AuthContext";
 
 function SignUp(): React.ReactElement {
   const navigate = useNavigate();

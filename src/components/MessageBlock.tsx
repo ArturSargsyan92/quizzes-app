@@ -1,5 +1,4 @@
 import React from "react";
-import "./MessageBlock.css";
 import { useNavigate } from "react-router-dom";
 
 type MessageBlockProps = {

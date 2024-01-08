@@ -5,26 +5,29 @@ import { AuthProvider } from "./context/AuthContext";
 import { PrivateRoute } from "./routes/PrivateRoute";
 
 /** Components */
-import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 /** Pages */
-import SignUp from "./pages/auth/Signup/Signup";
-import LoginForm from "./pages/auth/Login/Login";
-import Verify from "./pages/auth/Verify/Verify";
-import Profile from "./pages/Profile/Profile";
-import Quizzes from "./pages/Quizzes/Quizzes";
-import About from "./pages/About/About";
+import Home from "./pages/Home";
+import SignUp from "./pages/auth/Signup";
+import LoginForm from "./pages/auth/Login";
+import Verify from "./pages/auth/Verify";
+import Profile from "./pages/Profile";
+import Quizzes from "./pages/Quizzes";
+import About from "./pages/About";
 
-import NotFound from "./pages/NotFound/NotFound";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <Router>
       <AuthProvider>
-        <Navbar />
+        <Header />
 
         <Routes>
-          <Route path="/" element={<LoginForm />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/verify" element={<Verify />} />
 
@@ -37,6 +40,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
 
+        <Footer />
       </AuthProvider>
     </Router>
   );
