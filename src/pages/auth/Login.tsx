@@ -48,10 +48,8 @@ function LoginForm(): JSX.Element {
               onChange={handleInputChange}
             />
           </div>
-          <button type="submit">Login</button>
-          <button type="button" onClick={() => navigate("/signup")}>
-            SignUp
-          </button>
+          <button className="btn" type="submit">Login</button>
+          <button className="btn" type="button" onClick={() => navigate("/signup")}>SignUp</button>
         </form>
       </div>
     </main>

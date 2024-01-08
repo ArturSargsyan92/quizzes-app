@@ -1,3 +1,44 @@
 .homepage {
-    background-color: $color-gray-light;
+    @include displayFlex(row, nowrap, center, space-between, center);
+
+    .app-description {
+        margin-right: 5rem;
+
+        * {
+            text-align: justify;
+            font-size: 20px;
+        }
+        
+        
+        p {
+            &:first-of-type {
+                span {
+                    font-family: 'Libre Baskerville', serif;
+                    padding: 0 5px;
+                    font-size: 18px;
+
+                    &:hover {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                list-style-type: disc;
+                margin-bottom: 1rem;
+
+                span {
+                    color: $main-color;
+                    font-weight: 600;
+                    font-size: 18px;
+                    font-family: 'Libre Baskerville', serif;
+                }
+            }
+        }
+    }
+
+    .app-main-image {
+
+    }
 }

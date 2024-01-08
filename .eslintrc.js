@@ -22,7 +22,7 @@ module.exports = {
         "max-len": [
             "error",
             {
-                code: 120,
+                code: 300,
                 ignoreComments: true,
                 ignorePattern: '^import .*'
             },

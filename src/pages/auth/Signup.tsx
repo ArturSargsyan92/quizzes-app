@@ -80,8 +80,8 @@ function SignUp(): React.ReactElement {
               required
             />
           </div>
-          <button type="submit">Register</button>
-          <button type="button" onClick={() => navigate("/")}>Sign In</button>
+          <button className="btn" type="submit">Register</button>
+          <button className="btn" type="button" onClick={() => navigate("/")}>Sign In</button>
         </form>
       </div>
     </div>
